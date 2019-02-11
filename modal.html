@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Modal demo</title>
+    <style>
+     * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+     }
+     body{
+         font-family: sans-serif;
+     }
+     a:link,a:visited {
+         text-decoration: none;
+     }
+     .modal {
+         background-color: rgba(0,0,0,0.8);
+         width:100%;
+         height: 100vh;
+         position: absolute;
+         top:0;
+         z-index: 100;
+         /* opacity: 0;
+         visibility: hidden; */
+         display: none; 
+         transition: all 0.3s ease-in-out;
+       
+     }
+     .open {
+         display:block;
+     }
+     .modal_content {
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-color:#fff; 
+        padding: 2em;
+        border-radius: 1em;
+        /* opacity: 0;
+        visibility: hidden; */
+        transition: all 0.3s ease-in-out;
+     }
+     .modal_heading {
+         color:blue;
+         margin-bottom: 1em;
+     }
+     .modal_desc {
+         line-height: 1.5em;
+     }
+     .modal_close {
+         position: absolute;
+         top:1em;
+         right: 1em;
+         font-size: 2em;
+         color:darkgray;
+     }
+     .modal_open {
+         color:#fff;
+         background-color: deepskyblue;
+         border-radius:5px;
+         padding: 10px;
+         position: relative;
+         top:40px;
+         margin: 20px;
+     }
+     /* #modal:target {
+         opacity: 1;
+         visibility: visible;
+     }
+     #modal:target .modal_content {
+         opacity: 1;
+         visibility: visible;
+     } */
+    </style>
+</head>
+<body>
+    <a href="#signUp" class="modal_open" onclick ="modal_open()">Sing Up Model</a>
+    <!-- <div class="modal" id="signUp">
+        <div class="modal_content">
+                <a href="#" class="modal_close" onclick = "open_modal('signUp');">&times;</a>
+                <h2 class="modal_heading"> Modal using css</h2>
+                <p class="modal_desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit natus corporis voluptas quidem, fuga unde consequuntur est vitae deleniti repellat saepe neque dolores dignissimos ducimus aspernatur dolorum. Dolorem, accusamus maxime.Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ipsum in laudantium, a magni veritatis sed, amet tempore quia minus deleniti quis doloremque dolorem similique architecto soluta atque enim tempora!</p>
+        </div>
+       
+    </div> -->
+    <script>
+            class Modal {
+                constructor() {
+                    this.modalContainer = document.createElement('div');
+                    this.modalContainer.className = 'modal';
+                    document.body.appendChild(this.modalContainer);
+
+                    const modalContent = document.createElement('div');
+                    modalContent.className = 'modal_content';
+                    this.modalContainer.appendChild(modalContent);
+                    
+                    const modalClose = document.createElement('button');
+                    modalClose.className = 'modal_close';
+                    modalClose.innerHTML = '&times;';
+                    modalContent.appendChild(modalClose);
+                    modalClose.addEventListener('click', this.close.bind(this));
+
+                    this.header = document.createElement('h1');
+                    this.header.className ='modal_heading';
+                    modalContent.appendChild(this.header);
+
+                    this.content = document.createElement('p');
+                    this.content.className = 'modal_desc';
+                    modalContent.appendChild(this.content);
+                }
+                set contentData (value){
+                    this.content.innerHTML = value;
+                }
+                set headerData (value){
+                    this.header.innerHTML = value;
+                }
+             
+                open() {
+                    this.modalContainer.classList.add('open');
+                }
+                close() {
+                    this.modalContainer.classList.remove('open');
+                }
+            }
+            function modal_open(){
+                let modal = new Modal();
+                modal.contentData = ' Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit distinctio soluta eligendi consequuntur maiores libero quisquam. Suscipit alias ad neque itaque dicta, officia, distinctio eius ipsa, doloribus inventore ducimus sit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas exercitationem quibusdam quam quae perferendis corrupti adipisci. Nihil assumenda, recusandae fugiat, ab delectus ea dolorum temporibus voluptas dolores libero neque perspiciatis';
+                modal.headerData = ' Modal Using javascript class';
+                modal.open();
+            }
+          
+            
+    </script>
+  
+</body>
+
+
+  
+
+</html>
