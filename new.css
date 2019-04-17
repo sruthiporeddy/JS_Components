@@ -1,0 +1,214 @@
+
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+   
+    body {
+      background-color: #fff;
+      color:#53354A;
+      line-height: 2em;
+      text-transform: uppercase
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 2%;
+    }
+
+    h1 {
+      font-size:3em;
+      padding: 1em 0;
+    }
+ 
+    nav {
+      background-color: #e84545;
+      min-width: 100%;
+      
+    }
+    .toggle-menu span{
+      width: 30px;
+      height: 5px;;
+      margin: 3px 0;
+      display: block;
+      background-color: #fff
+    }
+   
+    nav ul {
+      display: flex;
+      justify-content: space-around;
+      list-style-type: none;
+      width: 50%;
+    }
+    nav ul li a {
+      color:  rgb(226, 215, 215);
+      text-decoration: none;
+      
+    }
+   
+    nav ul li a:hover {
+      color: rgb(102, 95, 95)
+    }
+    .toggle-menu { 
+       display: none;
+    }
+
+    nav {
+        padding: 5px 0;
+      }
+    /************ main content start ***********/
+    #main-banner, #main-banner img {
+        width: 100%;
+    }
+
+    #home-menu h2 {
+        background-image: url(./images/menu-head.png);
+        background-repeat: no-repeat;
+        width: 156px;
+        height: 74px;
+        text-indent: -10000px;
+        margin: 0 auto;
+        position: relative;
+        top:-11px;
+    }
+
+    #home-menu ul {
+        display: grid;
+        grid-template-columns:  repeat(2,1fr);
+        grid-auto-rows: minmax(60px, auto);
+        list-style-type: none;
+        justify-content: center; 
+    }
+
+    #home-menu ul li { 
+        padding: 0 20px;
+    }    
+    #home-menu ul li span{
+        display: block;   
+        text-align: center;
+    }
+    #home-menu ul li span:first-child {
+        font-weight: bold;
+    }
+    #home-menu ul li span:nth-of-type(2)
+    {
+        text-transform: lowercase;
+        font-style: italic;
+    }
+   
+  
+    #featured ul{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(200px,auto));
+        grid-auto-rows: minmax(200px,auto);
+        list-style-type: none;
+        margin-top: 20px;
+        grid-gap: 20px;
+    }
+    #featured ul li a {
+        text-decoration: none;
+    }
+    #featured ul li img{
+        border-radius: 10px;
+    }
+    #featured ul li span:first-of-type {
+        position: relative;
+        left :47px;
+    }
+   
+    /************* main content end  ************/
+
+
+
+
+   /*********** footer start ***********/
+
+    footer .wrapper {
+        background-color: #e84545;
+        min-width: 100%;
+        display: flex;
+        flex-flow: row wrap ;
+        justify-content: space-around;
+        align-items: center;
+
+    }
+    footer .wrapper ul {
+        flex: 1;
+        padding: 10px 20px;
+        list-style-type: none;
+    }
+    footer .wrapper ul li {
+        color: rgb(226, 215, 215);
+        text-transform: capitalize;
+        text-align:center;
+        
+    }
+
+    footer .wrapper ul li a {
+        color: rgb(90, 34, 34);
+        text-decoration: none;
+        text-transform: capitalize;
+    }
+    footer .wrapper ul li a:hover {
+        color: rgb(102, 95, 95)
+    }
+
+
+    /************* footer end *************/
+
+    @media screen and (max-width:620px) {
+      .container {
+        padding: 0;
+      }
+      
+      section {
+        padding: 0 10px;
+      }
+    nav ul {
+       display: block;
+       height: 0;
+       list-style-type: none;
+       text-align: center;
+       width: 100%;
+       visibility: hidden; 
+       background-color: #e84545;
+     }
+     nav ul.open {
+      height: auto;
+      visibility: visible;
+     }
+     nav ul li {
+       border-top :2px solid #53354A;
+       display: block;
+       font-size: 1.5em;
+       padding:  1em 0;
+     }
+     .toggle-menu {
+       padding:5px 0 5px 5px; 
+       display: block;
+     }
+
+     footer .wrapper {
+        display: flex;
+        flex-flow: column wrap ;
+        align-items: center; 
+        text-align: center;
+       
+    }
+    footer .wrapper ul{
+        margin:10px 0; 
+       
+    }
+    #featured ul {
+        justify-content: center;
+    }
+    #featured ul li > *{
+        display: block;
+        margin: 0 auto;
+    }
+    #featured ul li span:first-of-type {
+        position: relative;
+        left:0px;
+    }
+    }
